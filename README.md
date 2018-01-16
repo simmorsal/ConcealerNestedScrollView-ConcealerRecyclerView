@@ -73,7 +73,7 @@ header or footer views, they are drawn on the screen, dont call
 * if on runtime your `headerView` height size changes (either by
 directly changing it's size, or setting a view inside it to `VISIBLE`
 that causes the view's height size to change), make sure to call
-`cnsv.resetHeaderHeight();` exactly right after the code for
+`cnsv.resetHeaderHeight();` immediately after the code for
 resizing has been run. Likewise for the `footerView`, call
 `cnsv.resetFooterHeight();`.
 
