@@ -5,7 +5,7 @@ a custom NestedScrollView.
 
 ## usage
 
-#### XML
+### XML
 Starting with your XML layout, it should look like this:
 
 ![concealernsv-layout-setup](https://user-images.githubusercontent.com/24822099/34965249-ea66cfca-fa67-11e7-9982-20bf76e61551.png)
@@ -19,7 +19,7 @@ or `margin_bottom` to footer view. We'll do that in Java.
 
 Click [here](https://github.com/SIMMORSAL/ConcealerNestedScrollView/blob/master/app/src/main/res/layout/activity_main.xml) to see a sample.
 
-#### JAVA
+### JAVA
 
 In your java first get a reference to the `ConcealerNestedScrollView`
 widget. (also get a reference to the header and footer views as well).
