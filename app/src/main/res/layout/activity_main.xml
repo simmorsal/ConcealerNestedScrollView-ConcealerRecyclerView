@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.simmorsal.library.ConcealerNestedScrollView
+        android:id="@+id/concealerNSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:background="#BDBDBD"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="#9E9E9E"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="#757575"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="#BDBDBD"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="#9E9E9E"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <View
+                android:background="#757575"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+    </com.simmorsal.library.ConcealerNestedScrollView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/crdHeaderView"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardBackgroundColor="#C2185B"
+        android:layout_height="100dp">
+
+        <TextView
+            android:text="This is a floating CardView on top"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linFooterView"
+        android:background="#0097A7"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:text="This is a LinearLayout at the bottom"
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>
