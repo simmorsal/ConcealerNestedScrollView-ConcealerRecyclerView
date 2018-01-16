@@ -17,7 +17,7 @@ header and footer  below it.
 __IMPORTANT:__ DO NOT give `margin_top` to header view,
 or `margin_bottom` to footer view. We'll do that in Java.
 
-Click [here](createLinkHere) to see a sample.
+Click [here](https://github.com/SIMMORSAL/ConcealerNestedScrollView/blob/master/app/src/main/res/layout/activity_main.xml) to see a sample.
 
 #### JAVA
 
