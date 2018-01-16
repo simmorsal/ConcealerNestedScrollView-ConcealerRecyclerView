@@ -3,7 +3,16 @@
 A library to make views hide from top and bottom while scrolling
 a custom NestedScrollView.
 
+![gif_image](https://user-images.githubusercontent.com/24822099/34994798-e5d54432-fae9-11e7-8246-a12e66b20f18.gif)
+
+
 ## usage
+
+### Gradle
+
+``` gradle
+implementation 'com.simmorsal.library:concealer_nested_scroll_view:1.0.0'
+```
 
 ### XML
 Starting with your XML layout, it should look like this:
@@ -17,7 +26,7 @@ header and footer  below it.
 __IMPORTANT:__ DO NOT give `margin_top` to header view,
 or `margin_bottom` to footer view. We'll do that in Java.
 
-Click [here](https://github.com/SIMMORSAL/ConcealerNestedScrollView/blob/master/app/src/main/res/layout/activity_main.xml) to see a sample.
+Click [here](https://github.com/SIMMORSAL/ConcealerNestedScrollView/blob/master/app/src/main/res/layout/activity_main.xml) to see a XML sample.
 
 ### JAVA
 
@@ -25,7 +34,7 @@ In your java first get a reference to the `ConcealerNestedScrollView`
 widget. (also get a reference to the header and footer views as well).
 
 ``` JAVA
-        ConcealerNestedScrollView cnsv = findViewById(R.id.cnsv);
+    ConcealerNestedScrollView cnsv = findViewById(R.id.cnsv);
 ```
 
 Then you should pass the `headerView` and `footerView` (and margin top
@@ -38,20 +47,20 @@ In order to do so, in your `onCreate` call `.post()` on header and footer
 views:
 
 ``` JAVA
-        headerView.post(new Runnable() {
-            @Override
-            public void run() {
-                // parameters are (View headerView, int marginTop)
-                cnsv.setHeaderView(headerView, 15);
-            }
-        });
-        footerView.post(new Runnable() {
-            @Override
-            public void run() {
-                // parameters are (View footerView, int marginBottom)
-                cnsv.setFooterView(footerView, 0);
-            }
-        });
+    headerView.post(new Runnable() {
+        @Override
+        public void run() {
+            // parameters are (View headerView, int marginTop)
+            cnsv.setHeaderView(headerView, 15);
+        }
+    });
+    footerView.post(new Runnable() {
+        @Override
+        public void run() {
+            // parameters are (View footerView, int marginBottom)
+            cnsv.setFooterView(footerView, 0);
+        }
+    });
 ```
 
 __IMPORTANT NOTES:__
@@ -71,3 +80,32 @@ resizing has been run. Likewise for the `footerView`, call
 * You can make the views hide twice as fast if the
 `cnsv` has been scrolled more than the view's heights, by calling
 `cnsv.setHeaderFastHide(true);` and/or `cnsv.setFooterFastHide(true);`.
+
+
+
+## Donations
+
+
+
+> My bitcoin address: 15NkTxJMdZinU2rUnENfjt62uHtxXCcpEU
+
+> ![btc_address](https://user-images.githubusercontent.com/24822099/33515691-ec31ec7c-d77b-11e7-8b72-9e2060894859.png)
+
+
+
+
+## License
+
+   Copyright 2018 Soheil Mohammad Hosseini
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
