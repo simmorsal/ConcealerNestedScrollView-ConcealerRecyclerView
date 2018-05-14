@@ -3,7 +3,7 @@
 A library to make views hide from top and bottom while scrolling
 a custom NestedScrollView and\or a custom RecyclerView.
 
-[gif_image](https://user-images.githubusercontent.com/24822099/34994798-e5d54432-fae9-11e7-8246-a12e66b20f18.gif)
+![gif_image](https://user-images.githubusercontent.com/24822099/34994798-e5d54432-fae9-11e7-8246-a12e66b20f18.gif)
 
 
 ## Changelog
@@ -63,7 +63,7 @@ implementation 'com.simmorsal.library:concealer_nested_scroll_view:2.0.0'
 ### XML
 Starting with your XML layout, it should look like this:
 
-[concealernsv-layout-setup](https://user-images.githubusercontent.com/24822099/34965249-ea66cfca-fa67-11e7-9982-20bf76e61551.png)
+![concealernsv-layout-setup](https://user-images.githubusercontent.com/24822099/34965249-ea66cfca-fa67-11e7-9982-20bf76e61551.png)
 
 A parent `RelativeLayout` or `FrameLayout` that inside it is the
 `ConcealerNestedScrollView` on top, and two views (or one) as
