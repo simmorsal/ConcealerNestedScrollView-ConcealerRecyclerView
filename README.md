@@ -1,23 +1,69 @@
-## ConcealerNestedScrollView
+## ConcealerNestedScrollView & ConcealerRecyclerView
 
 A library to make views hide from top and bottom while scrolling
-a custom NestedScrollView.
+a custom NestedScrollView and\or a custom RecyclerView.
 
-![gif_image](https://user-images.githubusercontent.com/24822099/34994798-e5d54432-fae9-11e7-8246-a12e66b20f18.gif)
+[gif_image](https://user-images.githubusercontent.com/24822099/34994798-e5d54432-fae9-11e7-8246-a12e66b20f18.gif)
 
 
-## usage
+## Changelog
+
+> **V 2.0.0**
+>
+> * ConcealerNSV now has the ability to auto hide header and footer views
+>
+>   ``` java
+>   cnsv.setHeaderAutoHide(true); // true by default
+>   ```
+>
+> * You can set how fast the views would auto hide
+>
+>   ``` java
+>   cnsv.setHeaderAutoHideSpeed(300); // in milliseconds
+>   ```
+>
+> * You can set how much of the view would be hidden so it would auto hide
+>   ``` java
+>   cnsv.setHeaderPercentageToHide(50); // 40 by default
+>   ```
+>
+> * You can make the views concealable or not, and also visible or not
+>   ``` java
+>   // parameters are (boolean viewConcealable, boolean shouldViewBeVisible)
+>   cnsv.setHeaderConcealable(false, true);
+>   ```
+>
+> * All methods above apply to `footerView` as well.
+>
+> * Added **`ConcealerRecyclerView`**
+>
+>   * Usage is the same as `ConcealerNestedScrollView`
+>
+>   * Every method that works on `CNSV`, also works on `CRV`
+>
+> * **KNOWN ISSUES**
+>
+>   If the starting touch position is iniatiated on a clickable view inside `CNSV` and `CRV`,
+>   both classes will be unable to detect the touch
+>   (`MotionEvent.ACTION_DOWN` and `MotionEvent.ACTION_UP`), so they
+>   wouldn't be able to do auto hiding the moment the finger is lifted
+>   off the screen, and so they will do it 70 milliseconds after the last
+>   call on `onScrollChanged`. Pull requests are welcome.
+
+
+
+## Usage
 
 ### Gradle
 
 ``` gradle
-implementation 'com.simmorsal.library:concealer_nested_scroll_view:1.0.0'
+implementation 'com.simmorsal.library:concealer_nested_scroll_view:2.0.0'
 ```
 
 ### XML
 Starting with your XML layout, it should look like this:
 
-![concealernsv-layout-setup](https://user-images.githubusercontent.com/24822099/34965249-ea66cfca-fa67-11e7-9982-20bf76e61551.png)
+[concealernsv-layout-setup](https://user-images.githubusercontent.com/24822099/34965249-ea66cfca-fa67-11e7-9982-20bf76e61551.png)
 
 A parent `RelativeLayout` or `FrameLayout` that inside it is the
 `ConcealerNestedScrollView` on top, and two views (or one) as

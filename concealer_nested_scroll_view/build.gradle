@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 
-final VERSION_NAME = "1.1.0"
+final VERSION_NAME = "2.0.0"
 final VERSION_CODE = 2
 
 ext {
@@ -12,7 +12,7 @@ ext {
     libraryName = 'ConcealerNestedScrollView'
     artifact = 'concealer_nested_scroll_view'
 
-    libraryDescription = 'A library to make views hide from top and bottom while scrolling a custom NestedScrollView'
+    libraryDescription = 'A library to make views hide from top and bottom while scrolling a custom NestedScrollView (and RecyclerView)'
 
     siteUrl = 'https://github.com/SIMMORSAL/ConcealerNestedScrollView'
     gitUrl = 'https://github.com/SIMMORSAL/ConcealerNestedScrollView'

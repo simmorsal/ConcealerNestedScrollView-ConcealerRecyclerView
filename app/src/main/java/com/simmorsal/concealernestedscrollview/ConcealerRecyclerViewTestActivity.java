@@ -38,6 +38,8 @@ public class ConcealerRecyclerViewTestActivity extends AppCompatActivity {
                 rv.setFooterView(viewFooter, 0);
             }
         });
+
+        rv.setFooterPercentageToHide(80);
     }
 
     private void runRv() {

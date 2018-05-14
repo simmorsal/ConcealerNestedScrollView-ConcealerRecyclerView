@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AdapterRv extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<String> data = Arrays.asList("03A9F4", "795548", "03A9F4", "795548", "03A9F4", "795548", "03A9F4", "795548");
+    private List<String> data = Arrays.asList("455A64", "90A4AE", "455A64", "90A4AE", "455A64", "90A4AE", "455A64", "90A4AE");
     private Activity context;
     private ConcealerRecyclerView rv;
 
