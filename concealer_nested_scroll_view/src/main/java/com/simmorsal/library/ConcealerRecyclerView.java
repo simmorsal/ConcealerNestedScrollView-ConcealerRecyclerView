@@ -4,30 +4,20 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Handler;
-import android.support.v4.widget.NestedScrollView;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-public class ConcealerNestedScrollView extends NestedScrollView {
-    public ConcealerNestedScrollView(Context context) {
-        super(context);
-    }
+public class ConcealerRecyclerView extends RecyclerView {
+    public ConcealerRecyclerView(Context context) { super(context); }
+    public ConcealerRecyclerView(Context context, @Nullable AttributeSet attrs) { super(context, attrs); }
+    public ConcealerRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) { super(context, attrs, defStyle); }
 
-    public ConcealerNestedScrollView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
 
-    public ConcealerNestedScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    @Override
-    public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
-        dispatchNestedPreScroll(dx, dy, consumed, null);
-    }
-
+    private int y = 0, oldy = 0;
 
     private View headerView, footerView;
     private boolean isThereTouch = false;
@@ -106,14 +96,18 @@ public class ConcealerNestedScrollView extends NestedScrollView {
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
 
-        this.t = t;
-        deltaY = oldt - t;
+        y = computeVerticalScrollOffset();
+
+        this.t = y;
+        deltaY = oldy - y;
+
         if (headerView != null && isHeaderConcealable)
             doHeaderTransition();
         if (footerView != null && isFooterConcealable)
             doFooterTransition();
-    }
 
+        oldy = y;
+    }
     private void doHeaderTransition() {
 
         if (shouldHeaderAutoHide)
@@ -362,14 +356,5 @@ public class ConcealerNestedScrollView extends NestedScrollView {
     public static int dpToPx(int dp) {
         return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
+
 }
-
-
-
-
-
-
-
-
-
-
